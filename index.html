@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveScore Clone</title>
+  <style>
+    /* CSS included directly for simplicity */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    #scores {
+      margin-top: 20px;
+    }
+    .match {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Live Scores</h1>
+    <div id="scores">Loading live scores...</div>
+  </div>
+
+  <script>
+    // Mock live scores data (replace with a real API)
+    const mockScores = [
+      { team1: "Team A", team2: "Team B", score: "2-1", time: "45'" },
+      { team1: "Team C", team2: "Team D", score: "0-0", time: "30'" },
+      { team1: "Team E", team2: "Team F", score: "3-2", time: "80'" },
+    ];
+
+    // Function to display scores
+    function displayScores(scores) {
+      const scoresDiv = document.getElementById("scores");
+      scoresDiv.innerHTML = ""; // Clear loading message
+
+      scores.forEach((match) => {
+        const matchElement = document.createElement("div");
+        matchElement.className = "match";
+        matchElement.innerHTML = `
+          <p><strong>${match.team1} vs ${match.team2}</strong></p>
+          <p>Score: ${match.score}</p>
+          <p>Time: ${match.time}</p>
+        `;
+        scoresDiv.appendChild(matchElement);
+      });
+    }
+
+    // Simulate fetching data from an API
+    setTimeout(() => {
+      displayScores(mockScores);
+    }, 1000); // Simulate a 1-second delay
+  </script>
+</body>
+</html>
