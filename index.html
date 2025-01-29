@@ -97,11 +97,12 @@
       padding: 20px;
     }
 
-    .video-player iframe {
+    .video-player video {
       width: 100%;
       height: 500px;
       border: none;
       border-radius: 10px;
+      background-color: #000;
     }
 
     /* Video List */
@@ -157,7 +158,7 @@
         border-bottom: 1px solid #e0e0e0;
       }
 
-      .video-player iframe {
+      .video-player video {
         height: 300px;
       }
     }
@@ -187,11 +188,10 @@
 
     <!-- Video Player -->
     <div class="video-player">
-      <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 
